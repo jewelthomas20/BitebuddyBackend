@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 
-router.post('/displayfood',(req,res)=>{
+router.get('/displayfood',(req,res)=>{
     try {
         res.send([global.food_items,global.food_category])
     } catch (error) {
