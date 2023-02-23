@@ -22,6 +22,11 @@ router.post('/createuser', [
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }
+const existingUser= await user.findOne({email:req.body.email});
+if(existingUser){
+  console.log(existingUser)
+  return res.status(400).json({error:"Use an different Email",success:false})
+}
 
   const User = await user.create({
     name: req.body.name,
