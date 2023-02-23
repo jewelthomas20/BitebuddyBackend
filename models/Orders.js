@@ -9,6 +9,10 @@ const orderSchema=mongoose.Schema({
     order_data:{
         type:Array,
         required:true,
+    },
+    location:{
+        type:Array,
+        require:true
     }
 })
 
